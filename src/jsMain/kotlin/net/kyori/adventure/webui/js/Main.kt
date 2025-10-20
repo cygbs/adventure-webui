@@ -94,7 +94,7 @@ public fun mainLoaded() {
             if (!response.ok) {
                 isInEditorMode = false
                 bulmaToast.toast(
-                    "Could not load editor session!",
+                    "无法加载编辑器会话！",
                     type = "is-error"
                 )
             } else {
@@ -104,7 +104,7 @@ public fun mainLoaded() {
                     if (possibleEditorInput == null) {
                         isInEditorMode = false
                         bulmaToast.toast(
-                            "Could not load editor session!",
+                            "无法加载编辑器会话！",
                             type = "is-error"
                         )
                     } else {
@@ -112,7 +112,7 @@ public fun mainLoaded() {
                         editorInput = possibleEditorInput
                         input.value = editorInput.input
                         bulmaToast.toast(
-                            "Loaded editor session! Press the save icon to generate a command to save the message to ${editorInput.application}."
+                            "已加载编辑器会话！点按保存按钮来生成一个命令以保存此消息到 ${editorInput.application}。"
                         )
                         saveButton.classList.remove("is-hidden")
                     }
@@ -132,7 +132,7 @@ public fun mainLoaded() {
                     .then { token ->
                         window.navigator.clipboard.writeText(editorInput.command.replace("{token}", token))
                     }
-                    .then { bulmaToast.toast("The command to run in-game has been copied to your clipboard!") }
+                    .then { bulmaToast.toast("游戏内命令已复制到剪贴板！") }
             }
         }
     )
@@ -244,7 +244,7 @@ public fun mainLoaded() {
                     )
             }
             window.navigator.clipboard.writeText(link).then {
-                bulmaToast.toast("Shareable permanent link copied to clipboard!")
+                bulmaToast.toast("可分享的永久完整链接已复制到剪贴板！")
             }
         }
     )
@@ -262,7 +262,7 @@ public fun mainLoaded() {
                 .then { code -> "$homeUrl?$PARAM_SHORT_LINK=$code" }
                 .then { link ->
                     window.navigator.clipboard.writeText(link).then(
-                        { bulmaToast.toast("Shareable short link copied to clipboard!") },
+                        { bulmaToast.toast("可分享的短链接已复制到您的剪贴板！") },
                         {
                             // This is run when writing to the clipboard is rejected (by Safari)
                             createCopyModal("Short link generated", link)
@@ -290,7 +290,7 @@ public fun mainLoaded() {
         "click",
         {
             window.navigator.clipboard.writeText(input.value.replace("\n", "\\n")).then {
-                bulmaToast.toast("Input text copied to clipboard!")
+                bulmaToast.toast("已将输入文本复制到剪贴板！")
             }
         }
     )
@@ -303,7 +303,7 @@ public fun mainLoaded() {
             )
                 .then { response -> response.text() }
                 .then { text -> window.navigator.clipboard.writeText(text) }
-                .then { bulmaToast.toast("JSON copied to clipboard!") }
+                .then { bulmaToast.toast("JSON 已复制到剪贴板！") }
         }
     )
 
@@ -335,7 +335,7 @@ public fun mainLoaded() {
             )
                 .then { response -> response.text() }
                 .then { text -> window.navigator.clipboard.writeText(text) }
-                .then { bulmaToast.toast("Minecraft Server Hostname copied to clipboard!") }
+                .then { bulmaToast.toast("Minecraft 服务器名称已复制到剪贴板！") }
         }
     )
 
@@ -534,14 +534,14 @@ private fun checkClickEvents(target: EventTarget?, typesToCheck: Collection<Even
                 val actionName = clickAction.replace('_', ' ').replaceFirstChar(Char::uppercase)
                 bulmaToast.toast(type = "is-info") {
                     p {
-                        b { text("Click Event") }
+                        b { text("点击事件") }
                     }
                     p {
-                        text("Action: ")
+                        text("动作：")
                         i { text(actionName) }
                     }
                     p {
-                        text("Content: ")
+                        text("内容：")
                         i { text(content) }
                     }
                 }
@@ -558,10 +558,10 @@ private fun checkClickEvents(target: EventTarget?, typesToCheck: Collection<Even
             } else {
                 bulmaToast.toast(type = "is-info") {
                     p {
-                        b { text("Insertion") }
+                        b { text("插入") }
                     }
                     p {
-                        text("Content: ")
+                        text("内容：")
                         i { text(insertion) }
                     }
                 }
