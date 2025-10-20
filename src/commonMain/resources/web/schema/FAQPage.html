@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FAQPage (schema.org local copy)</title>
+    <meta name="description" content="Local copy of schema.org/FAQPage for offline use with Adventure WebUI">
+  </head>
+  <body>
+    <h1>FAQPage (schema.org local copy)</h1>
+    <p>This is a local copy of the <a href="https://schema.org/FAQPage">schema.org/FAQPage</a> type used for structured data. It is provided to allow the application to reference the type without contacting the external schema.org host.</p>
+    <h2>Definition (summary)</h2>
+    <p>The <strong>FAQPage</strong> type represents a page containing a collection of questions and answers. It is commonly used to mark up frequently asked questions and their accepted answers for search engines and structured data consumers.</p>
+    <h3>Usage</h3>
+    <ul>
+      <li>Attach <code>itemscope</code> and <code>itemtype="/schema/FAQPage.html"</code> to the root &lt;html&gt; element (or equivalent) to indicate the page type.</li>
+      <li>Each question should be annotated with <code>itemprop="mainEntity"</code> and <code>itemtype="/schema/Question.html"</code> (or left as text).</li>
+      <li>Each accepted answer should use <code>itemprop="acceptedAnswer"</code> and <code>itemtype="/schema/Answer.html"</code>.</li>
+    </ul>
+    <p>Note: This file is a small local helper and does not replace the authoritative documentation on schema.org.</p>
+  </body>
+</html>

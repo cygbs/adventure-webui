@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Question (schema.org local copy)</title>
+    <meta name="description" content="Local copy of schema.org/Question for offline use with Adventure WebUI">
+  </head>
+  <body>
+    <h1>Question (schema.org local copy)</h1>
+    <p>This is a local helper file describing the <strong>Question</strong> type used with FAQPage structured data.</p>
+    <h2>Definition (summary)</h2>
+    <p>The <strong>Question</strong> type represents a single question. Use <code>itemprop="name"</code> for the question title and wrap the accepted answer in <code>itemprop="acceptedAnswer"</code>.</p>
+    <p>Example usage:</p>
+    <pre>
+&lt;div itemscope itemtype="/schema/Question.html" itemprop="mainEntity"&gt;
+  &lt;h3 itemprop="name"&gt;What is this?&lt;/h3&gt;
+  &lt;div itemscope itemprop="acceptedAnswer" itemtype="/schema/Answer.html"&gt;
+    &lt;div itemprop="text"&gt;This is an example answer.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+  </body>
+</html>
