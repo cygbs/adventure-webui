@@ -2,7 +2,7 @@
 
 [![MIT 许可证](https://img.shields.io/badge/license-MIT-blue)](license.txt)
 
-这是为 MiniMessage（https://github.com/KyoriPowered/adventure-text-minimessage）提供的一个网页界面。
+这是为 [MiniMessage](https://github.com/KyoriPowered/adventure-text-minimessage) 提供的一个网页界面。
 
 你可以在这里访问在线演示: https://webui.advntr.dev/
 
