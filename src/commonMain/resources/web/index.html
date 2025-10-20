@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="MiniMessage Viewer is a web interface to help generate and edit MiniMessage strings.">
+    <meta name="description" content="MiniMessage 编辑器是一个 Web 界面，帮助生成和编辑 MiniMessage 字符串。">
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,18 +14,18 @@
     <meta name="theme-color" content="#ffffff">
     <title>MiniMessage 编辑器 | 简单地在线编辑 MiniMessage</title>
     <!--suppress HtmlUnknownTarget --> <script src="js/main.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+    <link rel="stylesheet" href="css/bulma.min.css"
           integrity="sha256-UDtbUHqpVVfXmdJcQVU/bfDEr9xldf3Dbd0ShD0Uf/Y=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-prefers-dark@0.1.0-beta.1/css/bulma-prefers-dark.min.css"
+    <link rel="stylesheet" href="css/bulma-prefers-dark.min.css"
           integrity="sha256-2dvu3oLP2b74EP3S9pi8Ns8io2ZUGnqtR9yOJB0+iZ8=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"
+    <link rel="stylesheet" href="css/animate.min.css"
           integrity="sha256-X7rrn44l1+AUO65h1LGALBbOc5C5bOstSYsNlv9MhT8=" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/js/all.min.js" defer
+    <script src="js/all.min.js" defer
             integrity="sha256-u11/XQI2A6mpXa0j1p0l0UpO3ZuiMTInGUqaT2K9ZWQ=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bulma-toast@2.3.1/dist/bulma-toast.min.js" defer
+    <script src="js/bulma-toast.min.js" defer
             integrity="sha256-S9DjwN1WDDoq2jChOYfPxbSYY4A30/U6oknr7khzsO0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5.5.2/dist/iro.min.js" defer
+    <script src="js/iro.min.js" defer
             integrity="sha256-XQju26ya9yEvX99+M2rrLah6xHsjZIGK1LvX/L3RjQ0=" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -82,34 +82,34 @@
                       <p>短链接将在六个月后失效！</p>
                     </div>
                     <div class="dropdown-item">
-                      <button class="button is-info share-button" id="short-link-share-button" aria-label="Share short link" title="Share short link">
+                      <button class="button is-info share-button" id="short-link-share-button" aria-label="Share short link" title="分享短链接">
                         分享短链接
                       </button>
-                      <button class="button is-info share-button" id="full-link-share-button" aria-label="Share full link" title="Share full link">
+                      <button class="button is-info share-button" id="full-link-share-button" aria-label="Share full link" title="分享完整链接">
                         分享完整链接
                       </button>
                     </div>
                   </div>
                 </div>
               </div>
-              <button class="button" id="export-to-json-button" aria-label="Export to JSON" title="Export to JSON">
+              <button class="button" id="export-to-json-button" aria-label="Export to JSON" title="导出到 JSON">
                 <span class="icon is-small"><i class="fas fa-file-export"></i></span>
               </button>
-              <button class="button" id="show-tree-button" aria-label="Show debug tree" title="Show debug tree">
+              <button class="button" id="show-tree-button" aria-label="Show debug tree" title="显示 debug 树">
                 <span class="icon is-small"><i class="fas fa-file-export"></i></span>
               </button>
               <a class="button" target="_blank" href="https://docs.advntr.dev/minimessage/format.html"
-                 aria-label="Documentation" rel="noopener" title="Documentation">
+                 aria-label="Documentation" rel="noopener" title="文档">
                 <span class="icon is-small"><i class="fas fa-book"></i></span>
               </a>
               <a class="button" target="_blank" href="https://github.com/KyoriPowered/adventure-webui"
-                 aria-label="Source" rel="noopener" title="Source">
+                 aria-label="Source" rel="noopener" title="源码">
                 <span class="icon is-small"><i class="fab fa-github"></i></span>
               </a>
-              <a class="button placeholders-button" aria-label="Placeholders" title="Placeholders">
+              <a class="button placeholders-button" aria-label="Placeholders" title="变量">
                 <span class="icon is-small"><i class="fas fa-code"></i></span>
               </a>
-              <a class="button settings-button" aria-label="Settings" title="Settings">
+              <a class="button settings-button" aria-label="Settings" title="设置">
                 <span class="icon is-small"><i class="fas fa-cog"></i></span>
               </a>
             </div>
@@ -124,7 +124,7 @@
           <!-- INPUT -->
           <div class="column is-full mt-2 pb-0">
             <div class="is-horizontal is-flex">
-              <label for="input">Input: </label>
+              <label for="input">请输入文本：</label>
               <div class="is-flex ml-auto">
                 <div class="dropdown">
                   <div class="dropdown-trigger swatch-trigger">
@@ -167,7 +167,7 @@
                             <input id="preview-hex" class="input is-family-monospace has-text-centered" type="text" size="7" value="#ffffff">
                           </div>
                           <div class="control">
-                            <button id="use-color" class="button is-success">Apply color</button>
+                            <button id="use-color" class="button is-success">应用颜色</button>
                           </div>
                         </div>
                       </div>
@@ -177,16 +177,16 @@
               </div>
               <div class="is-flex ml-1">
                 <div class="buttons has-addons is-right">
-                  <button class="button" id="editor-bold-button" aria-label="Bold" title="Add bold text">
+                  <button class="button" id="editor-bold-button" aria-label="Bold" title="加粗">
                     <span class="icon is-small"><i class="fas fa-bold"></i></span>
                   </button>
-                  <button class="button" id="editor-italic-button" aria-label="Italic" title="Add italic text">
+                  <button class="button" id="editor-italic-button" aria-label="Italic" title="斜体">
                     <span class="icon is-small"><i class="fas fa-italic"></i></span>
                   </button>
-                  <button class="button" id="editor-underline-button" aria-label="Underline" title="Add underlined text">
+                  <button class="button" id="editor-underline-button" aria-label="Underline" title="下划线">
                     <span class="icon is-small"><i class="fas fa-underline"></i></span>
                   </button>
-                  <button class="button" id="editor-strikethrough-button" aria-label="Strikethrough" title="Add strikethrough text">
+                  <button class="button" id="editor-strikethrough-button" aria-label="Strikethrough" title="删除线">
                     <span class="icon is-small"><i class="fas fa-strikethrough"></i></span>
                   </button>
                 </div>
@@ -231,7 +231,7 @@
           <!-- OUTPUT -->
           <div hidden id="hover-tooltip" class="mc-font"></div>
           <div class="column is-full is-flex is-flex-direction-column">
-            <label for="output-pane">Output: </label>
+            <label for="output-pane">输出：</label>
             <p hidden id="connection-lost-warning" class="has-text-danger is-size-4">
               <span class="icon"><i class="fas fa-exclamation-triangle"></i></span> 您的连接已丢失，请刷新页面。
             </p>
