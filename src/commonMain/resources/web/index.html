@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://webui.advntr.dev/">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="theme-color" content="#ffffff">
-    <title>MiniMessage Viewer | Edit MiniMessage easily online</title>
+    <title>MiniMessage 编辑器 | 简单地在线编辑 MiniMessage</title>
     <!--suppress HtmlUnknownTarget --> <script src="js/main.js" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
           integrity="sha256-UDtbUHqpVVfXmdJcQVU/bfDEr9xldf3Dbd0ShD0Uf/Y=" crossorigin="anonymous">
@@ -32,7 +32,7 @@
     <header class="navbar">
       <div class="navbar-brand">
         <a class="navbar-item" id="home-link">
-          <h1 class="title mc-font no-shadow">MiniMessage Viewer</h1>
+          <h1 class="title mc-font no-shadow">MiniMessage 编辑器</h1>
         </a>
         <a id="burger-menu" class="navbar-burger" role="button">
           <span></span>
@@ -45,11 +45,11 @@
         <div class="navbar-start">
           <div class="navbar-item">
             <div class="buttons mc-font">
-              <button class="button mc-mode" data-mode="CHAT_CLOSED">Chat (Closed)</button>
-              <button class="button mc-mode" data-mode="CHAT_OPEN">Chat (Open)</button>
-              <button class="button mc-mode" data-mode="LORE">Lore</button>
-              <button class="button mc-mode" data-mode="HOLOGRAM">Hologram</button>
-              <button class="button mc-mode" data-mode="SERVER_LIST">Server List</button>
+              <button class="button mc-mode" data-mode="CHAT_CLOSED">聊天（关闭状态）</button>
+              <button class="button mc-mode" data-mode="CHAT_OPEN">聊天（打开状态）</button>
+              <button class="button mc-mode" data-mode="LORE">物品描述</button>
+              <button class="button mc-mode" data-mode="HOLOGRAM">悬浮文字</button>
+              <button class="button mc-mode" data-mode="SERVER_LIST">服务器列表</button>
             </div>
           </div>
         </div>
@@ -79,14 +79,14 @@
                 <div class="dropdown-menu" id="share-dropdown-menu" role="menu">
                   <div class="dropdown-content">
                     <div class="dropdown-item">
-                      <p>Short links expire after 6 months!</p>
+                      <p>短链接将在六个月后失效！</p>
                     </div>
                     <div class="dropdown-item">
                       <button class="button is-info share-button" id="short-link-share-button" aria-label="Share short link" title="Share short link">
-                        Share short link
+                        分享短链接
                       </button>
                       <button class="button is-info share-button" id="full-link-share-button" aria-label="Share full link" title="Share full link">
-                        Share full link
+                        分享完整链接
                       </button>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
           <div class="column is-full is-flex is-flex-direction-column">
             <label for="output-pane">Output: </label>
             <p hidden id="connection-lost-warning" class="has-text-danger is-size-4">
-              <span class="icon"><i class="fas fa-exclamation-triangle"></i></span> Your connection with the server has been lost, please reload the page.
+              <span class="icon"><i class="fas fa-exclamation-triangle"></i></span> 您的连接已丢失，请刷新页面。
             </p>
             <div id="output-pane" class="is-flex is-flex-grow-1 is-flex-shrink-0">
               <div id="chat-entry-box" aria-hidden="true">_</div>
@@ -258,71 +258,71 @@
 
     <section>
       <div id="faq" class="container content">
-        <h2>Frequently asked questions (FAQ) about MiniMessage Viewer</h2>
+        <h2>关于 MiniMessage 编辑器的常见问题</h2>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">What is MiniMessage Viewer?</h3>
+          <h3 itemprop="name">什么是 MiniMessage 编辑器呢？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              MiniMessage Viewer, also called Adventure WebUI, is a web interface for MiniMessage.
-              It allows you to easily create and preview MiniMessage text in various formats, such as chat messages, lore, holograms, and server list entries.
+              MiniMessage 编辑器，也叫 Adventure WebUI，是一个专为 MiniMessage 设计的在线编辑器和预览工具。
+              它允许您更简单地创建和预览各种各样的 MiniMessage 文本，就好比说聊天消息、物品描述、悬浮文字和服务器列表条目等。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">What is MiniMessage?</h3>
+          <h3 itemprop="name">那什么是 MiniMessage 呢？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              MiniMessage is a text format used by the Adventure library to represent rich text in a compact and human-readable way.
-              It is used in various Minecraft plugins and mods to display formatted text in chat messages, lore, holograms, and server list entries.
-              You can find out more about MiniMessage on the <a href="https://docs.advntr.dev/minimessage/format.html">official documentation</a>.
+              MiniMessage 是 Adventure 库使用的一种文本格式，用于以紧凑且易于阅读的方式呈现富文本。
+              它被各种 Minecraft 插件和模组用于在聊天消息、物品描述、全息图和服务器列表条目中显示格式化文本。
+              您可以在<a href="https://docs.advntr.dev/minimessage/format.html">官方文档</a>了解更多 MiniMessage 的信息。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">Where do I find the source code for Adventure Webui/MiniMessage Viewer?</h3>
+          <h3 itemprop="name">我在哪找 Adventure WebUI / MiniMessage 编辑器的源码？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-               The source code for Adventure WebUI, also known as MiniMessage Viewer, can be found on <a href="https://github.com/KyoriPowered/adventure-webui">GitHub</a>.
+               这 Adventure WebUI（也叫MiniMessage 编辑器）的源码，可以在 <a href="https://github.com/KyoriPowered/adventure-webui">GitHub</a> 找到。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">How do I use MiniMessage Editor/Viewer?</h3>
+          <h3 itemprop="name">我要怎么用这个 MiniMessage 编辑器/预览器？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              To use MiniMessage Editor, simply enter your text in the input box in the middle of the screen.
-              You can use the buttons at the top select the format you want to preview the text in, such as chat, lore, hologram, or server list.
-              The output will be displayed below the input.
-              You can use the buttons above the input to format the text, such as making it bold, italic, or underlined.
-              You can also add clickable URLs, commands, and hover text.
+              要使用 MiniMessage 编辑器，只需在屏幕正上方的输入框中输入文本即可。
+              您可以使用顶部的按钮选择预览文本的格式，例如聊天、物品描述、悬浮文字或服务器列表条目。
+              输出将显示在输入下方。
+              您可以使用输入上方的按钮设置文本格式，例如将其设置为粗体、斜体或下划线。
+              您还可以添加可点击的 URL、命令和悬停文本。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">How do I share my generated MiniMessage text?</h3>
+          <h3 itemprop="name">我要怎么分享已经生成好的 MiniMessage 文本呢？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              To share your generated MiniMessage text, you can use the share buttons at the top of the screen.
-              You can share a short link or a full link to your MiniMessage text.
-              Short links expire after 6 months, so make sure to save the full link if you want to keep it for longer.
+              要分享您生成的 MiniMessage 文本，您可以使用屏幕顶部的分享按钮。
+              您可以分享一个您 MiniMessage 文本的短链接，或者是完整链接。
+              短链接 6 个月过期，所以如果您想要永久保存您的 MiniMessage 文本，请使用完整链接。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" class="mb-4">
-          <h3 itemprop="name">How do I export my generated MiniMessage text to JSON?</h3>
+          <h3 itemprop="name">我要怎么导出我生成好的 MiniMessage 文本到 JSON 文件里面？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              To export your generated MiniMessage text to JSON, click the <span class="icon is-small ml-1 mr-1"><i class="fas fa-file-export"></i></span> "Export to JSON" button at the top of the screen.
-              This will generate a JSON representation of your MiniMessage text that you can copy and paste into your plugin or mod.
+              要导出您已生成的 MiniMessage 文本到 JSON 文件，请点击<span class="icon is-small ml-1 mr-1"><i class="fas fa-file-export"></i></span>“导出到JSON”按钮，在屏幕最顶上。
+              这将生成您的 MiniMessage 文本的 JSON 表示形式，您可以将其复制并粘贴到您的插件或模组中。
             </div>
           </div>
         </div>
         <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <h3 itemprop="name">How do I preview my MiniMessage text in-game?</h3>
+          <h3 itemprop="name">我要如何在游戏内预览 MiniMessage 文本？</h3>
           <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
             <div itemprop="text">
-              To preview your MiniMessage text in-game, click the <span class="icon is-small ml-1 mr-1"><i class="fas fa-gamepad"></i></span> "Try in-game" button at the top of the screen.
-              It will copy a Minecraft server ip to your clipboard that you can add to your server list in Minecraft to get an in-game preview of your MiniMessage text.
+              要在游戏内预览您的 MiniMessage 文本，请点击<span class="icon is-small ml-1 mr-1"><i class="fas fa-gamepad"></i></span>“在游戏内测试”按钮，在屏幕最顶上。
+              它会将 Minecraft 服务器 IP 复制到您的剪贴板，您可以将其添加到 Minecraft 中的服务器列表中，以便在游戏中预览您的 MiniMessage 文本。
             </div>
           </div>
         </div>
@@ -333,7 +333,7 @@
     <footer class="footer">
       <div class="content has-text-centered">
         <p class="is-size-6 has-text-grey">
-          Not official Minecraft software. Not approved by or associated with Mojang or Microsoft.
+          并非是 Minecraft 官方软件。未经 Mojang 或 Microsoft 批准也与其无关。
         </p>
       </div>
     </footer>
@@ -343,20 +343,20 @@
       <div class="modal-background placeholders-button"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Placeholders</p>
+          <p class="modal-card-title">变量</p>
           <button class="delete placeholders-button"></button>
         </header>
         <section class="modal-card-body">
           <p id="placeholder-tip" class="help is-danger">
-            Tag names must only contain the characters <code>a-z</code>, <code>0-9</code>, <code>_</code> and <code>-</code>.
-            They may also optionally start with <code>!</code>, <code>?</code> or <code>#</code>.
+            标签名称必须只包含这些字符：<code>a-z</code>、<code>0-9</code>、<code>_</code>以及<code>-</code>。
+            它们也可以以<code>!</code>、<code>?</code>或<code>#</code>开始。
           </p>
           <div class="field-body">
             <table class="table is-striped is-hoverable is-fullwidth">
               <thead>
                 <tr>
-                  <th>Key</th>
-                  <th>Replacement</th>
+                  <th>键值</th>
+                  <th>替换项</th>
                   <th></th>
                 </tr>
               </thead>
@@ -366,7 +366,7 @@
         </section>
         <footer class="modal-card-foot">
           <a class="button add-placeholder-button" aria-label="Add placeholder" title="Add placeholder">
-            <span class="icon is-small"><i class="fas fa-plus"></i></span><span> Add placeholder</span>
+            <span class="icon is-small"><i class="fas fa-plus"></i></span><span> 添加变量</span>
           </a>
         </footer>
       </div>
@@ -384,7 +384,7 @@
         </section>
         <footer class="modal-card-foot">
           <a id="copy-modal-button" class="button close-copy-modal" aria-label="Click to copy" title="Click to copy">
-            <span class="icon is-small"><i class="fas fa-copy"></i></span><span> Click to copy</span>
+            <span class="icon is-small"><i class="fas fa-copy"></i></span><span> 点击以复制</span>
           </a>
         </footer>
       </div>
@@ -395,22 +395,22 @@
       <div class="modal-background settings-button"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Settings</p>
+          <p class="modal-card-title">设置</p>
           <button class="delete settings-button"></button>
         </header>
         <section class="modal-card-body">
           <div class="field is-horizontal">
             <div class="field-label">
-              <label class="label" for="setting-background">Background</label>
+              <label class="label" for="setting-background">背景图</label>
             </div>
             <div class="field-body">
               <div class="control">
                 <div class="select">
                   <select id="setting-background">
-                    <option value="desert">Desert</option>
-                    <option value="grass" selected>Grass</option>
-                    <option value="stone">Stone</option>
-                    <option value="water">Water</option>
+                    <option value="desert">沙漠</option>
+                    <option value="grass" selected>草地</option>
+                    <option value="stone">石头</option>
+                    <option value="water">河流</option>
                   </select>
                 </div>
               </div>
