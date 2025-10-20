@@ -3,9 +3,12 @@
 import net.kyori.indra.git.IndraGitExtension
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpack
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import java.time.Instant
 
 plugins {
+    // fat-jar builder for runnable jar
+    id("com.github.johnrengelman.shadow") version "8.1.1"
     alias(libs.plugins.indra.git)
     alias(libs.plugins.jib)
     alias(libs.plugins.kotlin.multiplatform)
@@ -198,3 +201,27 @@ tasks {
 
 /** Checks if the development property is set. */
 fun isDevelopment(): Boolean = project.hasProperty("isDevelopment")
+
+// ShadowJar configuration: produce a single executable jar with dependencies
+tasks {
+    // Only configure for the JVM target
+    val fatJar by registering(ShadowJar::class) {
+        archiveBaseName.set(rootProject.name)
+        archiveClassifier.set("")
+        archiveVersion.set(project.version.toString())
+
+        // include the jvmJar contents and runtime classpath
+        from(sourceSets.findByName("jvmMain")?.output)
+        configurations = listOf(project.configurations.getByName("jvmRuntimeClasspath"))
+
+        // Ensure the manifest contains the main class so jar is executable
+        manifest {
+            attributes(mapOf("Main-Class" to entryPoint))
+        }
+    }
+
+    // Make building the fatJar part of the build lifecycle
+    named("build") {
+        dependsOn(fatJar)
+    }
+}
